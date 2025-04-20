@@ -54,4 +54,13 @@ public interface IGenericDAO<T extends Persistente, E extends Serializable> {
      * @throws DAOException 
      */
     public Collection<T> buscarTodos() throws DAOException;
+    
+    /**
+     * Método para obter a chave do objeto
+     * 
+     * @param entity objeto para extrair a chave
+     * @return chave do objeto
+     * @throws TipoChaveNaoEncontradaException se não encontrar a chave do objeto
+     */
+    public E getChave(T entity) throws TipoChaveNaoEncontradaException;
 }
